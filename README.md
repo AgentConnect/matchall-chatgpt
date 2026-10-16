@@ -1,14 +1,14 @@
-# aMatch for ChatGPT
+# Matchall for ChatGPT
 
-Public source preparation for the aMatch ChatGPT plugin. **Not submitted to or
+Public source preparation for the Matchall ChatGPT plugin. **Not submitted to or
 approved by the ChatGPT plugin directory.** The manifest version identifies this
 source package; no GitHub release or marketplace version has been published.
 
 ## Package and installation path
 
 This repository uses Agent Plugins 1.0: root `plugin.json`, `mcp.json`, and
-`skills/match-service/SKILL.md`. The manifest preserves the `amatch-chatgpt`
-identity and includes OpenAI listing metadata plus five positive and three
+`skills/match-service/SKILL.md`. The manifest uses the `matchall-chatgpt`
+name and includes OpenAI listing metadata plus five positive and three
 negative review cases.
 
 Build the ZIP using the commands below. An authorized developer can later upload
@@ -17,12 +17,12 @@ OAuth connection, and run the review cases. A GitHub upload does not install the
 plugin into ChatGPT or replace an existing private installation. This package is
 **not submission-ready**; missing listing and review items are tracked below.
 
-## What aMatch does
+## What Matchall does
 
 Draft needs and offers in natural language, activate them after approval, inspect
 matches, and exchange private contact details only with mutual consent. Pause or
 close needs when appropriate. Match scores do not guarantee transactions;
-aMatch does not place orders or process payments.
+Matchall does not place orders or process payments.
 
 ## Authorization and data
 
@@ -36,7 +36,7 @@ Email binding is optional and helps with account recovery and notifications.
 Private contact details are entered separately from business text and login
 email. Without email, use manual checks or a host-supported scheduled task.
 A schedule is not created merely by installing this plugin.
-Business text is processed by the hosted aMatch service and its configured
+Business text is processed by the hosted Matchall service and its configured
 model providers. This repository is the client plugin package, not the backend.
 
 ## Example prompts
@@ -71,4 +71,13 @@ private service-support channel and service policies are still being prepared.
 
 [MIT](LICENSE) applies to this plugin package. It does not grant access to other
 users' data, relicense the hosted backend, or imply permission to impersonate
-AWiki, aMatch, OpenAI, Cursor, or xAI. The monochrome logo follows AWiki branding.
+AWiki, Matchall, OpenAI, Cursor, or xAI. The monochrome logo follows AWiki branding.
+
+## Matchall naming transition
+
+The plugin is now named `matchall-chatgpt` and the MCP connection label is
+`matchall`. Its source repository is now
+[AgentConnect/matchall-chatgpt](https://github.com/AgentConnect/matchall-chatgpt).
+The existing OAuth/MCP URLs are unchanged; renaming the display/package does not
+migrate accounts or change permissions.
+This source update does not publish a release or update installed host copies.

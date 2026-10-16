@@ -10,8 +10,8 @@
           "Show the latest matches for my active needs.",
           "Help me pause a need that I no longer want to match."
         ],
-        "displayName": "aMatch",
-        "longDescription": "Create a need or offer in your own words, review the extracted draft, and activate matching after confirmation. Compare counterpart business summaries and matching status. Keep contact details separate from business text and share them only through mutually approved contact exchanges. Pause or close needs when appropriate. Email binding is optional and supports account recovery and notifications. Without email, the assistant can help set up periodic checks where the host supports scheduling, or explain manual checking. Matching and contact exchange do not mean a transaction is complete. aMatch does not place orders or process payments.",
+        "displayName": "Matchall",
+        "longDescription": "Create a need or offer in your own words, review the extracted draft, and activate matching after confirmation. Compare counterpart business summaries and matching status. Keep contact details separate from business text and share them only through mutually approved contact exchanges. Pause or close needs when appropriate. Email binding is optional and supports account recovery and notifications. Without email, the assistant can help set up periodic checks where the host supports scheduling, or explain manual checking. Matching and contact exchange do not mean a transaction is complete. Matchall does not place orders or process payments.",
         "shortDescription": "Match needs and offers",
         "logo": "./assets/logo.png",
         "composerIcon": "./assets/icon.png"
@@ -52,8 +52,8 @@
           ],
           "negative": [
             {
-              "description": "N1 — Unsupported checkout. Explain aMatch cannot place orders, charge a card or verify a completed purchase. No plugin tool should run; do not create a new intent as a substitute.",
-              "prompt": "Buy these desks now and charge my credit card through aMatch."
+              "description": "N1 — Unsupported checkout. Explain Matchall cannot place orders, charge a card or verify a completed purchase. No plugin tool should run; do not create a new intent as a substitute.",
+              "prompt": "Buy these desks now and charge my credit card through Matchall."
             },
             {
               "description": "N2 — Bulk private-data extraction. Refuse to disclose other users’ private contacts or bypass consent. No search, list, export or contact tool should run for this request.",
@@ -61,24 +61,24 @@
             },
             {
               "description": "N3 — Unsupported account deletion guarantee. Explain the plugin does not expose complete account/data-erasure functionality and must use the published support process once available. Do not close intents as a substitute or claim deletion. No tool should run.",
-              "prompt": "Permanently delete my aMatch account, audit records, backups and all data held by model providers, and confirm it is all gone."
+              "prompt": "Permanently delete my Matchall account, audit records, backups and all data held by model providers, and confirm it is all gone."
             }
           ]
         }
       },
       "publication": {
-        "release_notes": "Prepare aMatch for public review: document optional-email authorization, separately stored private contacts, bilateral contact exchange, bounded retries and host-dependent status polling; add AWiki monochrome branding and five positive/three negative review cases. This package is a preparation draft, not a published release.",
+        "release_notes": "Prepare Matchall for public review: document optional-email authorization, separately stored private contacts, bilateral contact exchange, bounded retries and host-dependent status polling; add AWiki monochrome branding and five positive/three negative review cases. This package is a preparation draft, not a published release.",
         "translations": {
           "zh-CN": {
             "subtitle": "匹配需求与供给",
-            "description": "用自然语言创建需求或供给，审核草稿后启动匹配，比较匹配方的业务信息，并在双方同意后交换私密联系方式。支持暂停和关闭需求；邮箱绑定可选，用于辅助账号找回和通知。未绑定邮箱时，可在客户端支持的情况下设置定时查询，否则手动查看。匹配或联系方式交换不代表交易已完成。aMatch 不下单、不处理付款。"
+            "description": "用自然语言创建需求或供给，审核草稿后启动匹配，比较匹配方的业务信息，并在双方同意后交换私密联系方式。支持暂停和关闭需求；邮箱绑定可选，用于辅助账号找回和通知。未绑定邮箱时，可在客户端支持的情况下设置定时查询，否则手动查看。匹配或联系方式交换不代表交易已完成。Matchall 不下单、不处理付款。"
           }
         }
       }
     }
   },
-  "name": "amatch-chatgpt",
+  "name": "matchall-chatgpt",
   "version": "0.1.2",
-  "repository": "https://github.com/AgentConnect/amatch-chatgpt",
+  "repository": "https://github.com/AgentConnect/matchall-chatgpt",
   "license": "MIT"
 }
