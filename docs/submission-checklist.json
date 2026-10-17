@@ -1,0 +1,128 @@
+{
+  "checked_date": "2026-10-17",
+  "target": "ChatGPT",
+  "submission_ready": false,
+  "items": [
+    {
+      "id": "public_source",
+      "done": true,
+      "label": "公开源码仓库与 MIT 许可证"
+    },
+    {
+      "id": "logo",
+      "done": true,
+      "label": "Logo 与图标素材"
+    },
+    {
+      "id": "listing",
+      "done": true,
+      "label": "名称、简介及示例提示词"
+    },
+    {
+      "id": "homepage",
+      "done": true,
+      "label": "官网地址已核实并写入配置"
+    },
+    {
+      "id": "mcp",
+      "done": true,
+      "label": "当前 Matchall MCP 地址及 OAuth 发现信息"
+    },
+    {
+      "id": "consent_skill",
+      "done": true,
+      "label": "私密匹配、公开预览与双方联系授权规则"
+    },
+    {
+      "id": "case_design",
+      "done": true,
+      "label": "5 个正例、3 个反例已编写（不代表已执行）"
+    },
+    {
+      "id": "localization",
+      "done": true,
+      "label": "发布说明与中文介绍"
+    },
+    {
+      "id": "review_guide",
+      "done": true,
+      "label": "审核账号设置说明、演示步骤与结果记录表"
+    },
+    {
+      "id": "policy_drafts",
+      "done": true,
+      "label": "支持、隐私、条款草稿已更新（尚未发布生效）"
+    },
+    {
+      "id": "package",
+      "done": true,
+      "label": "最终准备包与本地校验",
+      "owner": "agent",
+      "reason": "本地结构、配置、素材及 ZIP 内容检查通过"
+    },
+    {
+      "id": "source_ci",
+      "done": true,
+      "label": "源码 PR 已建立（该提交 CI 另行核对）",
+      "owner": "agent",
+      "reason": "既有 PR #1；本轮将推送补全材料"
+    },
+    {
+      "id": "publisher",
+      "done": false,
+      "label": "发布者身份及开发者验证",
+      "owner": "publisher"
+    },
+    {
+      "id": "policies",
+      "done": false,
+      "label": "支持渠道、隐私政策及服务条款的正式内容和公开链接",
+      "owner": "publisher",
+      "reason": "需运营主体、支持渠道、处理商、保留/删除承诺；草稿不能替代"
+    },
+    {
+      "id": "publication",
+      "done": false,
+      "label": "国家/地区范围和商业声明",
+      "owner": "publisher"
+    },
+    {
+      "id": "reviewer_access",
+      "done": false,
+      "label": "审核人员可独立登录的专用账号与真实演示数据",
+      "owner": "publisher_and_agent"
+    },
+    {
+      "id": "host_e2e",
+      "done": false,
+      "label": "ChatGPT 内 OAuth 与 8 个用例的真实验收",
+      "owner": "publisher_and_agent",
+      "reason": "本地检查、私有 MCP 排练不能替代提交包的目标宿主验收"
+    },
+    {
+      "id": "annotations_live",
+      "done": false,
+      "label": "已部署服务全部工具标注的语义与实测核对",
+      "owner": "agent_after_host_access",
+      "reason": "源码有布尔标注；不能仅凭字段存在宣称语义审核通过"
+    },
+    {
+      "id": "demo",
+      "done": false,
+      "label": "真实演示录像及审核可访问的观看链接",
+      "owner": "publisher_and_agent"
+    },
+    {
+      "id": "portal",
+      "done": false,
+      "label": "提交后台连接、域名验证、安全检查和本人声明",
+      "owner": "publisher_and_agent"
+    },
+    {
+      "id": "submit",
+      "done": false,
+      "label": "正式提交审核（尚未操作）",
+      "owner": "publisher"
+    }
+  ]
+}

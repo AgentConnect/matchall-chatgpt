@@ -7,14 +7,32 @@
   "submission_ready": false,
   "target_host_e2e": "UNVERIFIED",
   "pending": [
-    "Target-host OAuth, tool discovery and authenticated tool calls",
-    "Five positive and three negative cases in isolated reviewer accounts",
-    "Product website, support channel, privacy policy and service terms",
-    "Confirmed publisher identity, availability countries and commerce declarations",
-    "Reviewer access and a real demo recording",
-    "Backend tool-annotation audit and any required corrections",
-    "Four verified listing URLs and developer identity in submission portal",
-    "Domain verification, security scans and owner attestations",
-    "Submit for review and publish only when separately authorized"
-  ]
+    "发布者身份及开发者验证",
+    "支持渠道、隐私政策及服务条款的正式内容和公开链接",
+    "国家/地区范围和商业声明",
+    "审核人员可独立登录的专用账号与真实演示数据",
+    "ChatGPT 内 OAuth 与 8 个用例的真实验收",
+    "已部署服务全部工具标注的语义与实测核对",
+    "真实演示录像及审核可访问的观看链接",
+    "提交后台连接、域名验证、安全检查和本人声明",
+    "正式提交审核（尚未操作）"
+  ],
+  "checked_date": "2026-10-17",
+  "checklist": "submission-checklist.json",
+  "mcp_endpoint": "https://matchall.net/amatch/v2",
+  "prepared_materials": [
+    "公开源码仓库与 MIT 许可证",
+    "Logo 与图标素材",
+    "名称、简介及示例提示词",
+    "官网地址已核实并写入配置",
+    "当前 Matchall MCP 地址及 OAuth 发现信息",
+    "私密匹配、公开预览与双方联系授权规则",
+    "5 个正例、3 个反例已编写（不代表已执行）",
+    "发布说明与中文介绍",
+    "审核账号设置说明、演示步骤与结果记录表",
+    "支持、隐私、条款草稿已更新（尚未发布生效）",
+    "最终准备包与本地校验",
+    "源码 PR 已建立（该提交 CI 另行核对）"
+  ],
+  "local_package_validation": "PASS_2026-10-17"
 }

@@ -3,7 +3,7 @@
   "mcpServers": {
     "matchall": {
       "type": "streamable-http",
-      "url": "https://awiki.info/amatch/v2"
+      "url": "https://matchall.net/amatch/v2"
     }
   }
 }

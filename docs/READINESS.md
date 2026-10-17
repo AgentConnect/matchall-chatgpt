@@ -1,39 +1,34 @@
-# Marketplace readiness
+# ChatGPT submission readiness
 
-Repository preparation date: 2026-10-14. This public repository is a preparation
-artifact, not evidence of marketplace approval or a successful target-host test.
-See [machine-readable status](readiness.json) and [review cases](review-cases.json).
-The cases are designed scenarios, not passed tests. Do not seed them into live
-user accounts or publish real contact information as fixtures.
+Checked 2026-10-17. Preparation only; not submitted, listed or approved.
+See [checkbox checklist](SUBMISSION-CHECKLIST.md), [machine status](readiness.json),
+[reviewer guide](REVIEWER-GUIDE.md), [owner inputs](OWNER-INPUTS.md),
+[review cases](review-cases.json) and [case results](case-status.json).
 
-## Remaining work
+## Ready materials
 
-- Target-host OAuth, tool discovery and authenticated tool calls
-- Five positive and three negative cases in isolated reviewer accounts
-- Product website, support channel, privacy policy and service terms
-- Confirmed publisher identity, availability countries and commerce declarations
-- Reviewer access and a real demo recording
-- Backend tool-annotation audit and any required corrections
-- Four verified listing URLs and developer identity in submission portal
-- Domain verification, security scans and owner attestations
-- Submit for review and publish only when separately authorized
+The package has Matchall branding, a public repository, MIT license, square logo
+and composer icon, English listing, Chinese translation, release notes, five
+positive/three negative cases and the current Streamable HTTP MCP endpoint.
+websiteURL is set to https://matchall.net. The skill separates private matching
+activation from opt-in public visibility and bilateral contact disclosure.
+Reviewer access instructions, real-demo steps and draft policy pages are included.
+These prepared materials are not executed-case evidence or published policies.
 
-## Grok Bot OAuth compatibility
+## Gaps
 
-A Cursor support response reported three DCR redirect URIs: the exact
-`cursor://anysphere.cursor-mcp/oauth/callback`,
-`https://www.cursor.com/agents/mcp/oauth/callback`, and
-`http://localhost:8787/callback`. This is a compatibility observation, not a
-request to allow arbitrary redirects. Verify the current host request and exact
-server allowlist before changing configuration. The current Gateway test covers
-the HTTPS and localhost pair; that alone does not prove the full host flow.
-Never broaden to wildcard callbacks or embed a service token to bypass OAuth.
-[Support thread](https://forum.cursor.com/t/grok-bot-custom-mcp-oauth-fails-before-sign-in-redirect-uri-not-allowed/171877).
+Verified publisher identity, private support, final privacy/terms pages, country
+coverage and commerce declarations still need confirmed facts. Unknown fields
+remain absent rather than fabricated. The service tools do not place orders or
+process payments; that does not establish whether the hosted service is free.
 
-## Sources
+Dedicated reviewer access, exact ChatGPT plugin installation/OAuth, all eight
+host cases and a real reviewer-accessible video are unverified. Local package
+validation or a private custom-MCP rehearsal does not establish those results.
+The backend source declares boolean readOnlyHint/openWorldHint/destructiveHint;
+semantics and the exact deployed tool list still require review and live evidence.
 
-- [Cursor plugin reference](https://cursor.com/docs/reference/plugins)
-- [Grok Bot plugin connection](https://cursor.com/help/grok-bot/connect-plugins)
-- [Cursor publisher terms](https://cursor.com/marketplace-publisher-terms)
-- [OpenAI plugin submission](https://developers.openai.com/plugins/deploy/submission)
-- [Agent Plugins standard](https://agent-plugins.org/)
+After preparation is complete and draft upload is authorized, verify the saved
+version, imported metadata, OAuth connection, required domain/developer checks,
+security scans and owner declarations. Review submission and later publication
+require their corresponding authorization. This work does not deploy the service.

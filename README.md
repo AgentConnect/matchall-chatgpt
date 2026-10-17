@@ -26,7 +26,10 @@ Matchall does not place orders or process payments.
 
 ## Authorization and data
 
-The remote MCP endpoint is `https://awiki.info/amatch/v2`.
+The canonical remote MCP endpoint for this candidate is
+`https://matchall.net/amatch/v2`. The endpoint was deployed and passed public
+HTTPS acceptance on 2026-10-16; ChatGPT host authorization and tool acceptance
+remain pending.
 Use the host's OAuth connection UI. Discovery advertises PKCE S256, dynamic
 client registration, and `intent:read` / `intent:write` scopes. Never put tokens,
 passwords, verification codes, or private contact details in this repository.
@@ -56,12 +59,17 @@ python scripts/validate.py
 python scripts/package.py
 ```
 
-The validator checks package structure, referenced assets, contact workflow,
+The validator uses pinned Agent Plugins 1.0.0 schemas with recorded source URLs
+and hashes, so package validation does not depend on a live schema download.
+It checks package structure, referenced assets, contact workflow,
 review case inventory, and absence of embedded credentials. ZIP generation is
 local only, uses an explicit file allowlist, and inspects the generated archive.
 Neither script installs a plugin, invokes matching tools, deploys the service,
 or submits a marketplace application. CI only validates and packages locally.
-See [readiness](docs/READINESS.md) for the remaining marketplace work.
+See the [checkbox checklist](docs/SUBMISSION-CHECKLIST.md),
+[reviewer guide](docs/REVIEWER-GUIDE.md) and [readiness](docs/READINESS.md) for the
+remaining marketplace work. Draft policies in `docs/policy-drafts/` are not
+published policies and must not be represented as verified listing URLs.
 
 ## Support and license
 
@@ -78,6 +86,9 @@ AWiki, Matchall, OpenAI, Cursor, or xAI. The monochrome logo follows AWiki brand
 The plugin is now named `matchall-chatgpt` and the MCP connection label is
 `matchall`. Its source repository is now
 [AgentConnect/matchall-chatgpt](https://github.com/AgentConnect/matchall-chatgpt).
-The existing OAuth/MCP URLs are unchanged; renaming the display/package does not
-migrate accounts or change permissions.
+The MCP endpoint now targets the dedicated Matchall instance. The older
+`awiki.info` instance is separate; its accounts are not silently migrated.
+The dedicated instance retains its stable OAuth issuer identity and explicitly
+configured legacy resource compatibility. Account data and permissions are not
+changed by this package update.
 This source update does not publish a release or update installed host copies.

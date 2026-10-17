@@ -1,0 +1,47 @@
+{
+  "checked_date": "2026-10-17",
+  "target": "ChatGPT packaged plugin",
+  "cases": [
+    {
+      "id": "P1",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "P2",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "P3",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "P4",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "P5",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "N1",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "N2",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "N3",
+      "status": "NOT_RUN",
+      "evidence": null
+    }
+  ],
+  "note": "Prepared cases and a private custom-MCP rehearsal are not proof of the exact packaged-plugin acceptance."
+}

@@ -3,7 +3,7 @@ import json
 import re
 import struct
 from pathlib import Path, PurePosixPath
-from urllib.request import urlopen
+import hashlib
 
 import jsonschema
 
@@ -12,10 +12,12 @@ IGNORED = {'.git', '.venv', '__pycache__', 'dist'}
 
 
 def package_files():
-    paths = [ROOT / name for name in ('README.md', 'LICENSE', 'mcp.json')]
+    paths = [ROOT / name for name in ('README.md', 'LICENSE', 'mcp.json',
+                                     'requirements-dev.txt', 'scripts/validate.py',
+                                     'scripts/package.py')]
     paths.append(ROOT / ('plugin.json' if (ROOT / 'plugin.json').exists()
                          else '.cursor-plugin/plugin.json'))
-    for directory in ('assets', 'skills'):
+    for directory in ('assets', 'skills', 'docs', 'schemas'):
         paths.extend(p for p in (ROOT / directory).rglob('*') if p.is_file())
     return sorted(paths)
 
@@ -32,18 +34,25 @@ def validate():
     assert manifest['repository'] == f'https://github.com/AgentConnect/{expected_name}'
     assert not any(k in manifest for k in ('apps', 'hooks'))
     assert (ROOT / 'LICENSE').read_text().startswith('MIT License\n')
-    expected_server = {'url': 'https://awiki.info/amatch/v2'}
+    expected_server = {'url': 'https://matchall.net/amatch/v2'}
     if chatgpt:
         expected_server['type'] = 'streamable-http'
         for kind, value in (('plugin', manifest), ('mcp', mcp)):
-            url = f'https://agent-plugins.org/schemas/1.0.0/{kind}.schema.json'
-            with urlopen(url, timeout=30) as response:
-                schema = json.load(response)
+            schema_root = ROOT / 'schemas' / 'agent-plugins-1.0.0'
+            provenance = json.loads((schema_root / 'provenance.json').read_text())
+            record = next(s for s in provenance['sources']
+                          if s['file'] == f'{kind}.schema.json')
+            schema_bytes = (schema_root / record['file']).read_bytes()
+            assert hashlib.sha256(schema_bytes).hexdigest() == record['sha256']
+            schema = json.loads(schema_bytes)
+            assert schema['$id'] == record['source']
+            jsonschema.Draft202012Validator.check_schema(schema)
             jsonschema.Draft202012Validator(schema).validate(value)
         interface = manifest['extensions']['com.openai']['interface']
         assert len(interface['displayName']) <= 30
         assert len(interface['shortDescription']) <= 30
         assert len(interface['longDescription']) <= 4000
+        assert interface['websiteURL'] == 'https://matchall.net'
         prompts = interface['defaultPrompt']
         assert 0 < len(prompts) <= 3 and len(set(prompts)) == len(prompts)
         assert all(0 < len(s) <= 128 and '\n' not in s for s in prompts)
@@ -70,6 +79,8 @@ def validate():
     assert skill.startswith('---\nname: match-service\ndescription: ')
     assert all(s in skill for s in ('contact_details', 'email_bound',
                                    'expected_row_version', 'mutual approval'))
+    assert all(s in skill for s in ('data.public_preview', 'intent_version',
+                                   'expected_visibility_version'))
     cases = json.loads((ROOT / 'docs/review-cases.json').read_text())
     assert cases['execution_status'] == 'NOT_RUN_IN_TARGET_HOST'
     cases = cases['test_cases']
